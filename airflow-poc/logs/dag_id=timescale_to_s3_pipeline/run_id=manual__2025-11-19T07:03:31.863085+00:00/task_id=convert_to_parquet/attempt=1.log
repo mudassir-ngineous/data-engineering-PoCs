@@ -1,0 +1,17 @@
+[2025-11-19T07:03:34.467+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: timescale_to_s3_pipeline.convert_to_parquet manual__2025-11-19T07:03:31.863085+00:00 [queued]>
+[2025-11-19T07:03:34.473+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: timescale_to_s3_pipeline.convert_to_parquet manual__2025-11-19T07:03:31.863085+00:00 [queued]>
+[2025-11-19T07:03:34.473+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-11-19T07:03:34.478+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): convert_to_parquet> on 2025-11-19 07:03:31.863085+00:00
+[2025-11-19T07:03:34.483+0000] {standard_task_runner.py:57} INFO - Started process 731 to run task
+[2025-11-19T07:03:34.484+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'timescale_to_s3_pipeline', 'convert_to_parquet', 'manual__2025-11-19T07:03:31.863085+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/timescale_to_s3_pipeline.py', '--cfg-path', '/tmp/tmpfyndehyf']
+[2025-11-19T07:03:34.486+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask convert_to_parquet
+[2025-11-19T07:03:34.522+0000] {task_command.py:416} INFO - Running <TaskInstance: timescale_to_s3_pipeline.convert_to_parquet manual__2025-11-19T07:03:31.863085+00:00 [running]> on host ae03e29b1bee
+[2025-11-19T07:03:34.572+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_team' AIRFLOW_CTX_DAG_ID='timescale_to_s3_pipeline' AIRFLOW_CTX_TASK_ID='convert_to_parquet' AIRFLOW_CTX_EXECUTION_DATE='2025-11-19T07:03:31.863085+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-19T07:03:31.863085+00:00'
+[2025-11-19T07:03:34.573+0000] {timescale_to_s3_pipeline.py:92} INFO - Starting CSV to Parquet conversion
+[2025-11-19T07:03:34.586+0000] {timescale_to_s3_pipeline.py:103} INFO - Read 108 records from CSV file
+[2025-11-19T07:03:34.600+0000] {timescale_to_s3_pipeline.py:120} INFO - Parquet file created: /tmp/timescale_data_2025-11-19.parquet
+[2025-11-19T07:03:34.600+0000] {timescale_to_s3_pipeline.py:124} INFO - Cleaned up CSV file: /tmp/timescale_data_2025-11-19.csv
+[2025-11-19T07:03:34.601+0000] {python.py:194} INFO - Done. Returned value was: /tmp/timescale_data_2025-11-19.parquet
+[2025-11-19T07:03:34.618+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=timescale_to_s3_pipeline, task_id=convert_to_parquet, execution_date=20251119T070331, start_date=20251119T070334, end_date=20251119T070334
+[2025-11-19T07:03:34.627+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-19T07:03:34.643+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
